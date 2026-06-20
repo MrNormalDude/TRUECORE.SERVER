@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Truecore</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: #050505;
+            color: #ffffff;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            overflow: hidden;
+        }
+
+        .container {
+            padding: 20px;
+            max-width: 600px;
+            width: 100%;
+        }
+
+        .logo {
+            max-width: 180px;
+            width: 100%;
+            height: auto;
+            margin-bottom: 25px;
+            border-radius: 20px;
+            filter: drop-shadow(0 0 15px rgba(255, 255, 255, 0.1));
+            opacity: 0;
+            animation: fadeInItem 0.8s ease-out forwards;
+        }
+
+        .server-name-wrapper {
+            font-size: 3.5rem;
+            font-weight: 700;
+            letter-spacing: 3px;
+            margin-bottom: 10px;
+            display: flex;
+            justify-content: center;
+            gap: 2px;
+            flex-wrap: wrap;
+        }
+
+        .letter {
+            color: #ffffff;
+            opacity: 0;
+            transform: translateY(20px);
+            animation: letterAppear 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards,
+                       glowPulse 3s ease-in-out infinite alternate 0.6s;
+        }
+
+        .server-version {
+            font-size: 1.2rem;
+            color: #a0a0a0;
+            margin-bottom: 40px;
+            letter-spacing: 1px;
+            opacity: 0;
+            animation: fadeInItem 1s ease-out 0.5s forwards;
+        }
+
+        .discord-btn {
+            display: inline-block;
+            background: linear-gradient(135deg, #7289da, #5865F2);
+            color: #ffffff;
+            text-decoration: none;
+            padding: 16px 45px;
+            border-radius: 50px;
+            font-size: 1.2rem;
+            font-weight: 700;
+            letter-spacing: 1px;
+            transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            box-shadow: 0 0 15px rgba(88, 101, 242, 0.3);
+            opacity: 0;
+            animation: fadeInItem 1s ease-out 1.2s forwards;
+        }
+
+        .discord-btn:hover {
+            transform: scale(1.08) translateY(-2px);
+            box-shadow: 0 0 30px rgba(88, 101, 242, 0.6);
+        }
+
+        .discord-btn:active {
+            transform: scale(0.95);
+        }
+
+        @keyframes fadeInItem {
+            0% { opacity: 0; transform: translateY(15px); }
+            100% { opacity: 1; transform: translateY(0); }
+        }
+
+        @keyframes letterAppear {
+            0% { opacity: 0; transform: translateY(30px) scale(0.8); }
+            100% { opacity: 1; transform: translateY(0) scale(1); }
+        }
+
+        @keyframes glowPulse {
+            0% { 
+                text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 20px #4facfe, 0 0 30px #4facfe; 
+            }
+            100% { 
+                text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 20px #00f2fe, 0 0 40px #00f2fe; 
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <img src="logo.png" alt="Truecore Logo" class="logo">
+        
+        <div class="server-name-wrapper">
+            <span class="letter" style="animation-delay: 0.1s;">T</span>
+            <span class="letter" style="animation-delay: 0.2s;">R</span>
+            <span class="letter" style="animation-delay: 0.3s;">U</span>
+            <span class="letter" style="animation-delay: 0.4s;">E</span>
+            <span class="letter" style="animation-delay: 0.5s;">C</span>
+            <span class="letter" style="animation-delay: 0.6s;">O</span>
+            <span class="letter" style="animation-delay: 0.7s;">R</span>
+            <span class="letter" style="animation-delay: 0.8s;">E</span>
+        </div>
+        
+        <p class="server-version">Версия 26.1.2</p>
+        
+        <a href="https://discord.gg/zNgzPxdgQ" class="discord-btn" target="_blank">Присоединиться к Discord</a>
+    </div>
+</body>
+</html>
